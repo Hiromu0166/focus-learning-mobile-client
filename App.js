@@ -1,19 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer,  createBottomTabNavigator } from 'react-navigation';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+import PomodoroTimerScreen from './src/screens/PomodoroTimerScreen';
+import ReportScreen from './src/screens/ReportScreen';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const TabMavigator = createBottomTabNavigator(
+  {
+    PomodoroTimerScreen: {screen: PomodoroTimerScreen},
+    ReportScreen: {screen: ReportScreen}
+  }
+);
+
+const App = createAppContainer(TabMavigator);
+
+export default App;
