@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import axios from '../http/AxiosLearningSession';
 
 class ReportScreen extends Component {
     render() {
